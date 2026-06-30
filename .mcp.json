@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "ferris-emu": {
+      "type": "http",
+      "url": "https://api.tryferris.app/external-mcp/"
+    }
+  }
+}

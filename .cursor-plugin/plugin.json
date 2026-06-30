@@ -1,0 +1,11 @@
+{
+  "name": "ferris-emu",
+  "description": "Search software platform documentation powered by Ferris AI. Provides semantic search across platform docs for implementation guidance.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Ferris AI"
+  },
+  "homepage": "https://tryferris.app",
+  "keywords": ["documentation", "search", "software-context", "ferris", "mcp"],
+  "logo": "assets/logo.svg"
+}
