@@ -43,7 +43,7 @@ The agent will automatically use the `search_software_context` tool. See `skills
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `query` | string | Yes | Natural language search query |
-| `bank` | string | No | Target a specific platform (e.g. `qualtrics`). Omit to search all. |
+| `bank` | string | Yes | Which platform to search (e.g. `qualtrics`, `enginehire`) |
 | `limit` | integer | No | Max results (default: 10) |
 
 ## Development

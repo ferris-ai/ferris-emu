@@ -20,7 +20,7 @@ Use the `search_software_context` tool to find relevant documentation about soft
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `query` | string | Yes | Natural language search query |
-| `bank` | string | No | Target a specific platform (e.g. `qualtrics`, `enginehire`). Omit to search all. |
+| `bank` | string | Yes | Which platform to search (e.g. `qualtrics`, `enginehire`) |
 | `limit` | integer | No | Max results to return (default: 10) |
 
 ## Writing Effective Queries
@@ -95,10 +95,9 @@ The best queries activate multiple strategies simultaneously:
  ^-- semantic meaning    ^-- exact keyword         ^-- keyword match
 ```
 
-### Use `bank` to focus or omit to discover
+### Always specify `bank`
 
-- **Specify `bank`** when you know which platform has the answer. Faster, more focused.
-- **Omit `bank`** when you're exploring or unsure which platform covers a topic. Cross-searches all available platforms and returns the most relevant results globally.
+The `bank` parameter is required. Specify the platform you want to search (e.g. `qualtrics`, `enginehire`). If you're unsure which platform covers a topic, check the available banks from the tool's error message or try the most likely one first.
 
 ### Iterate on partial results
 
@@ -128,11 +127,12 @@ Results are sorted by relevance across all strategies. A result appearing via mu
 }
 ```
 
-### Exploring across platforms
+### Searching EngineHire docs
 
 ```json
 {
   "query": "webhook configuration for event-driven notifications",
+  "bank": "enginehire",
   "limit": 10
 }
 ```
