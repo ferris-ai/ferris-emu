@@ -43,28 +43,10 @@ The agent will automatically use the `search_software_context` tool. See `skills
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `query` | string | Yes | Natural language search query |
-| `bank` | string | Yes | Which platform to search (e.g. `qualtrics`, `enginehire`) |
+| `bank` | enum | Yes | Which platform to search — dynamically populated from active banks on the server |
 | `limit` | integer | No | Max results (default: 10) |
 
-## Development
-
-To point at the dev environment instead of production:
-
-**Cursor** — edit `mcp.json`:
-```json
-{
-  "mcpServers": {
-    "ferris-emu": {
-      "url": "https://api.tryferris.dev/external-mcp/"
-    }
-  }
-}
-```
-
-**Claude Code:**
-```bash
-claude mcp add --transport http --scope user ferris-emu https://api.tryferris.dev/external-mcp/
-```
+The `bank` parameter is a **dynamic enum** — the server populates valid values at runtime based on which software documentation banks are active for your project. Current options include `qualtrics`, `enginehire`, and `salesforce-developer`.
 
 ## Plugin Structure
 
