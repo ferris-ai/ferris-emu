@@ -1,12 +1,26 @@
 # Ferris EMU
 
-Search software platform documentation powered by [Ferris AI](https://tryferris.app). This plugin provides semantic search across indexed platform docs directly from your IDE agent.
+Search software platform documentation powered by [Ferris AI](https://tryferris.app). This plugin provides semantic search across indexed platform docs directly from your AI assistant or coding agent.
 
 ## What It Does
 
 Gives your AI agent access to `search_software_context` — a tool that searches curated software platform documentation using semantic memory (Hindsight). Unlike generic web search, results come from structured, pre-indexed documentation with multi-strategy retrieval (semantic, keyword, graph, temporal).
 
 ## Install
+
+### Claude.ai
+
+1. Go to **Settings > Connectors > Add custom connector**
+2. Paste the server URL: `https://api.tryferris.app/external-mcp/`
+3. Complete the OAuth flow to connect your Ferris account
+
+Requires a Claude Pro, Max, Team, or Enterprise plan.
+
+### ChatGPT
+
+1. Go to **Settings > MCP** (or search for MCP servers)
+2. Add a custom MCP server with the URL: `https://api.tryferris.app/external-mcp/`
+3. Complete the OAuth flow to connect your Ferris account
 
 ### Cursor
 
@@ -18,6 +32,15 @@ Or install from the Cursor Marketplace: search for "ferris-emu" in Customize.
 
 ### Claude Code
 
+**Via plugin marketplace:**
+
+```
+/plugin marketplace add <github-owner>/ferris-emu-plugins
+/plugin install ferris-emu@ferris-emu
+```
+
+**Or add the MCP server directly:**
+
 ```bash
 claude mcp add --transport http --scope user ferris-emu https://api.tryferris.app/external-mcp/
 ```
@@ -26,7 +49,7 @@ Then authenticate by running `/mcp` in a Claude Code session and completing the 
 
 ## Authentication
 
-This MCP server uses OAuth 2.1. On first connection, your IDE will prompt you to authenticate with your Ferris account. The OAuth flow opens your browser, you log in (or confirm if already logged in), and the token is stored locally.
+This MCP server uses OAuth 2.1. On first connection, your AI assistant will prompt you to authenticate with your Ferris account. The OAuth flow opens your browser, you log in (or confirm if already logged in), and the token is stored automatically.
 
 ## Usage
 
@@ -53,7 +76,9 @@ The `bank` parameter is a **dynamic enum** — the server populates valid values
 ```
 ferris-emu-plugins/
 ├── .cursor-plugin/plugin.json     # Cursor plugin manifest
-├── .claude-plugin/plugin.json     # Claude Code plugin manifest
+├── .claude-plugin/
+│   ├── plugin.json                # Claude Code plugin manifest
+│   └── marketplace.json           # Claude Code marketplace catalog
 ├── skills/
 │   └── search-software-context/
 │       └── SKILL.md               # Agent skill with search optimization guidance
