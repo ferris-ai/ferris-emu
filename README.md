@@ -11,7 +11,7 @@ Gives your AI agent access to `search_software_context` — a tool that searches
 ### Claude.ai
 
 1. Go to **Settings > Connectors > Add custom connector**
-2. Paste the server URL: `https://api.tryferris.app/external-mcp/`
+2. Paste the server URL: `https://api.tryferris.app/emu/mcp`
 3. Complete the OAuth flow to connect your Ferris account
 
 Requires a Claude Pro, Max, Team, or Enterprise plan.
@@ -19,14 +19,14 @@ Requires a Claude Pro, Max, Team, or Enterprise plan.
 ### ChatGPT
 
 1. Go to **Settings > MCP** (or search for MCP servers)
-2. Add a custom MCP server with the URL: `https://api.tryferris.app/external-mcp/`
+2. Add a custom MCP server with the URL: `https://api.tryferris.app/emu/mcp`
 3. Complete the OAuth flow to connect your Ferris account
 
 ### Cursor
 
 **One-click install:**
 
-[Install Ferris EMU in Cursor](cursor://anysphere.cursor-deeplink/mcp/install?name=ferris-emu&config=eyJ1cmwiOiJodHRwczovL2FwaS50cnlmZXJyaXMuYXBwL2V4dGVybmFsLW1jcC8ifQ%3D%3D)
+[Install Ferris EMU in Cursor](cursor://anysphere.cursor-deeplink/mcp/install?name=ferris-emu&config=eyJ1cmwiOiJodHRwczovL2FwaS50cnlmZXJyaXMuYXBwL2VtdS9tY3AifQ%3D%3D)
 
 Or install from the Cursor Marketplace: search for "ferris-emu" in Customize.
 
@@ -42,7 +42,7 @@ Or install from the Cursor Marketplace: search for "ferris-emu" in Customize.
 **Or add the MCP server directly:**
 
 ```bash
-claude mcp add --transport http --scope user ferris-emu https://api.tryferris.app/external-mcp/
+claude mcp add --transport http --scope user ferris-emu https://api.tryferris.app/emu/mcp
 ```
 
 Then authenticate by running `/mcp` in a Claude Code session and completing the OAuth flow.
