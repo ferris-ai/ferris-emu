@@ -1,6 +1,6 @@
 # Ferris EMU
 
-Search software platform documentation powered by [Ferris AI](https://tryferris.app). This plugin provides semantic search across indexed platform docs directly from your AI assistant or coding agent.
+Search software platform documentation powered by [Ferris AI](https://tryferris.ai). This plugin provides semantic search across indexed platform docs directly from your AI assistant or coding agent.
 
 ## What It Does
 
@@ -35,7 +35,7 @@ Or install from the Cursor Marketplace: search for "ferris-emu" in Customize.
 **Via plugin marketplace:**
 
 ```
-/plugin marketplace add <github-owner>/ferris-emu-plugins
+/plugin marketplace add ferris-ai/ferris-emu
 /plugin install ferris-emu@ferris-emu
 ```
 
