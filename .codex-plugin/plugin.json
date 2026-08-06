@@ -1,0 +1,26 @@
+{
+  "name": "ferris-emu",
+  "version": "1.0.0",
+  "description": "Search software platform documentation powered by Ferris AI. Provides semantic search across platform docs for implementation guidance.",
+  "author": {
+    "name": "Ferris AI",
+    "email": "support@tryferris.app",
+    "url": "https://tryferris.app"
+  },
+  "homepage": "https://tryferris.app",
+  "license": "MIT",
+  "keywords": ["documentation", "search", "software-context", "ferris", "mcp"],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Ferris EMU",
+    "shortDescription": "Search software platform documentation powered by Ferris AI.",
+    "longDescription": "Semantic search across indexed platform docs directly from your AI assistant or coding agent. Results come from structured, pre-indexed documentation with multi-strategy retrieval.",
+    "developerName": "Ferris AI",
+    "category": "Productivity",
+    "capabilities": ["Read"],
+    "websiteURL": "https://tryferris.app",
+    "brandColor": "#F97316",
+    "logo": "./assets/logo.svg"
+  }
+}

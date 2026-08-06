@@ -47,6 +47,28 @@ claude mcp add --transport http --scope user ferris-emu https://api.tryferris.ap
 
 Then authenticate by running `/mcp` in a Claude Code session and completing the OAuth flow.
 
+### Codex
+
+**Via plugin directory:**
+
+Install from the Codex Plugin Directory, or add the marketplace:
+
+```bash
+codex plugin marketplace add ferris-ai/ferris-emu
+```
+
+**Or add the MCP server directly:**
+
+```bash
+codex mcp add ferris-emu --url https://api.tryferris.app/emu/mcp
+```
+
+Then authenticate:
+
+```bash
+codex mcp login ferris-emu
+```
+
 ## Authentication
 
 This MCP server uses OAuth 2.1. On first connection, your AI assistant will prompt you to authenticate with your Ferris account. The OAuth flow opens your browser, you log in (or confirm if already logged in), and the token is stored automatically.
@@ -79,11 +101,12 @@ ferris-emu-plugins/
 ├── .claude-plugin/
 │   ├── plugin.json                # Claude Code plugin manifest
 │   └── marketplace.json           # Claude Code marketplace catalog
+├── .codex-plugin/plugin.json      # OpenAI Codex plugin manifest
 ├── skills/
 │   └── search-software-context/
 │       └── SKILL.md               # Agent skill with search optimization guidance
 ├── mcp.json                       # Cursor MCP server config
-├── .mcp.json                      # Claude Code MCP server config
+├── .mcp.json                      # Claude Code / Codex MCP server config
 ├── assets/
 │   └── logo.svg                   # Plugin logo
 └── README.md
